@@ -1,5 +1,10 @@
 package com.fangxiaobin.java8.chatper2;
 
+import com.fangxiaobin.java8.chatper1.Apple;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 import java.util.function.Function;
 
 /**
@@ -19,8 +24,7 @@ public class LambdaExpression {
 
     public static void main(String[] args) {
 
-        Function<String,Integer> function = s->s.length();
-
+//        Function<String,Integer> function = s->s.length();
         /**
          * lambda表达式
          *
@@ -30,6 +34,23 @@ public class LambdaExpression {
          * () -> { return "hello" }
          *
          */
+
+
+        Comparator<Apple> byColor = new Comparator<Apple>() {
+            @Override
+            public int compare(Apple o1, Apple o2) {
+                return o1.getColor().compareTo(o2.getColor());
+            }
+        };
+
+        List<Apple> list =  Collections.emptyList();
+        list.sort(byColor);
+
+        Comparator<Apple> byColor2 = (o1,o2) -> o1.getColor().compareTo(o2.getColor());
+
+//        Function<String,Integer>  filambda =
+
+
 
     }
 

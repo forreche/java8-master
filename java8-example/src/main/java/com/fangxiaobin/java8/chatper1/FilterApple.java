@@ -12,22 +12,22 @@ import java.util.List;
 public class FilterApple {
 
 
-    public interface AppleFilter{
+    public interface AppleFilter {
         boolean filter(Apple apple);
     }
 
-    public static List<Apple> findApple(List<Apple> apples,AppleFilter appleFilter){
+    public static List<Apple> findApple(List<Apple> apples, AppleFilter appleFilter) {
         List<Apple> list = new ArrayList<>();
 
         for (Apple apple : apples) {
-            if(appleFilter.filter(apple)){
+            if (appleFilter.filter(apple)) {
                 list.add(apple);
             }
         }
         return list;
     }
 
-    public static class GreenAndWeightFilter implements AppleFilter{
+    public static class GreenAndWeightFilter implements AppleFilter {
 
         @Override
         public boolean filter(Apple apple) {
@@ -36,26 +36,24 @@ public class FilterApple {
     }
 
 
-
-
-
     public static List<Apple> findGreenApple(List<Apple> apples) {
         List<Apple> list = new ArrayList<>();
 
 
         for (Apple apple : apples) {
-            if ("green".equals(apple.getColor())){
+            if ("green".equals(apple.getColor())) {
                 list.add(apple);
             }
         }
         return list;
     }
-    public static List<Apple> findApple(List<Apple> apples,String color) {
+
+    public static List<Apple> findApple(List<Apple> apples, String color) {
         List<Apple> list = new ArrayList<>();
 
 
         for (Apple apple : apples) {
-            if (color.equals(apple.getColor())){
+            if (color.equals(apple.getColor())) {
                 list.add(apple);
             }
         }
@@ -64,11 +62,11 @@ public class FilterApple {
 
     public static void main(String[] args) {
         List<Apple> list = Arrays.asList(
-                new Apple("green",150),
-                new Apple("yellow",170),
-                new Apple("green",180),
-                new Apple("red",150)
-                );
+                new Apple("green", 150),
+                new Apple("yellow", 170),
+                new Apple("green", 180),
+                new Apple("red", 150)
+        );
 
 //        List<Apple> greenApples = findGreenApple(list);
 //        assert greenApples.size() == 2;
@@ -90,7 +88,10 @@ public class FilterApple {
         System.out.println(result);*/
 
 
-        List<Apple> lambdaResult = findApple(list ,apple1 -> {
+        /**
+         * lambada 改造
+         */
+        List<Apple> lambdaResult = findApple(list, apple1 -> {
             return apple1.getColor().equals("green");
         });
 
