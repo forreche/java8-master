@@ -1,4 +1,4 @@
-package com.fangxiaobin.java8.chatper3;
+package com.fangxiaobin.java8.chapter3;
 
 import java.util.*;
 

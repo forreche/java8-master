@@ -1,4 +1,4 @@
-package com.fangxiaobin.java8.chatper1;
+package com.fangxiaobin.java8.chapter1;
 
 /**
  * @author :方晓彬

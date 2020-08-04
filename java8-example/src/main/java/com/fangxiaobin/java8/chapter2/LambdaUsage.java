@@ -1,6 +1,6 @@
-package com.fangxiaobin.java8.chatper2;
+package com.fangxiaobin.java8.chapter2;
 
-import com.fangxiaobin.java8.chatper1.Apple;
+import com.fangxiaobin.java8.chapter1.Apple;
 
 import java.util.ArrayList;
 import java.util.Arrays;
